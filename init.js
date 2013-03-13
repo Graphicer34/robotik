@@ -79,7 +79,7 @@ function init(canvas, ctx){
                 var robot = robots[i];
                 refreshRobot( ctx, ground , robot );
                 
-		        robots[i]['worker'] = new Worker(robot.script);
+		        robots[i]['worker'] = new Worker("robots/" + robot.script);
 		        robots[i].worker.robotName = i;
 		        robots[i].worker.addEventListener('message', function(event) {
 		            messageHandler( ctx, ground, this.robotName, event );
@@ -127,13 +127,6 @@ $(document).ready(function(){
 	    
 	}).resize();
 	
-	$(document.body).keydown(function(e){
-	    // D
-	    if(e.keyCode==68 && !e.altKey && !e.ctrlKey && !e.shiftKey && !e.metaKey){
-	        $('div').toggle();
-	    }
-	});
-   
     initUI(canvas, ctx);
 	
 });
