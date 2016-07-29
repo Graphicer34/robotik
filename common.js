@@ -1,7 +1,7 @@
 var Status = {
-	DIRTY:'DIRTY',
-	BRUSHED:'BRUSHED',
-	CLEAN:'CLEAN'
+    DIRTY:'DIRTY',
+    BRUSHED:'BRUSHED',
+    CLEAN:'CLEAN'
 };
 
 var VELOCITY_FACTOR = 0.5;
@@ -15,11 +15,11 @@ var ANIMATE = true; //unstable
 var NEIGHBOR_CHECK_ON_STOP = false;
 
 function Array2D( w, h ){
-	var x = new Array(w);
-	for (var i = 0; i < w; i++) {
-		x[i] = new Array(h);
-	}
-	return x;
+    var x = new Array(w);
+    for (var i = 0; i < w; i++) {
+        x[i] = new Array(h);
+    }
+    return x;
 }
 
 function isDef(check){
@@ -35,5 +35,5 @@ function waitAndDo( doWhat, howMuch ){
     setTimeout( function(){
         doWhat();
     }, howMuch * VELOCITY_FACTOR );
-    
+
 }
